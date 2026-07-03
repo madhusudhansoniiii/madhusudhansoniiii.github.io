@@ -1,7 +1,7 @@
 # Kegel Coach — Kegel Trainer: Pelvic Floor Exercises
 
 A fast, private, offline-first kegel exercise trainer (PWA), with a clean
-Zerodha-Kite-inspired UI. Live at **https://mssoni.me**.
+Zerodha-Kite-inspired UI. Live at **https://madhusudhansoniiii.github.io**.
 
 - Guided squeeze/relax sessions with animation, sound and vibration cues
 - 4 workouts: Beginner, Classic, Endurance, Quick flicks
@@ -29,7 +29,7 @@ The app ships to Play as a Trusted Web Activity using
 
 ```bash
 npm i -g @bubblewrap/cli
-bubblewrap init --manifest https://mssoni.me/manifest.webmanifest
+bubblewrap init --manifest https://madhusudhansoniiii.github.io/manifest.webmanifest
 # suggested applicationId: me.mssoni.kegelcoach
 bubblewrap build          # produces app-release-bundle.aab
 ```
