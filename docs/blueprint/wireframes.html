@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kegel App — Lo-fi Wireframes</title>
+<style>
+  :root{--bg:#14110E;--surface:#1F1A15;--border:#362E25;--text:#F4EFE8;--sec:#A99E90;--mut:#776E62;--brass:#D9A441;--green:#86A57E}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif;padding:32px 20px 64px}
+  h1{font-size:22px;margin-bottom:4px}
+  .sub{color:var(--sec);margin-bottom:32px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;max-width:1400px}
+  .frame{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:16px 14px;min-height:460px;display:flex;flex-direction:column;gap:10px}
+  .frame h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:2px}
+  .box{border:1px dashed var(--mut);border-radius:10px;padding:8px 10px;color:var(--sec);font-size:12px}
+  .solid{border:1px solid var(--border);border-style:solid;background:var(--bg)}
+  .btn{background:var(--brass);color:#14110E;border-radius:12px;text-align:center;padding:12px;font-weight:600;font-size:13px}
+  .ghost{border:1px solid var(--border);border-radius:12px;text-align:center;padding:11px;color:var(--sec);font-size:13px}
+  .circle{width:120px;height:120px;border-radius:50%;border:2px solid var(--brass);margin:14px auto;display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--brass)}
+  .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+  .chip{border:1px solid var(--border);border-radius:99px;padding:3px 10px;font-size:11px;color:var(--sec)}
+  .chip.on{border-color:var(--brass);color:var(--brass)}
+  .tabs{margin-top:auto;display:flex;justify-content:space-around;border-top:1px solid var(--border);padding-top:10px;color:var(--mut);font-size:11px}
+  .tabs b{color:var(--brass);font-weight:600}
+  .bar{height:8px;border-radius:99px;background:var(--bg);border:1px solid var(--border);overflow:hidden}
+  .bar i{display:block;height:100%;width:60%;background:var(--brass)}
+  .note{color:var(--mut);font-size:11px}
+  .cols{display:flex;gap:6px;align-items:flex-end;height:56px}
+  .cols i{flex:1;background:var(--brass);opacity:.7;border-radius:3px 3px 0 0}
+  .lock{color:var(--mut)}
+  .good{color:var(--green)}
+</style>
+</head>
+<body>
+<h1>Kegel App — Lo-fi Wireframes</h1>
+<p class="sub">Structure and hierarchy only (not visual design — see doc 04 for the design system).
+Brass = primary action / active state. Every screen localizes into 12 languages, so all
+containers wrap rather than truncate.</p>
+
+<div class="grid">
+
+<div class="frame"><h2>1 · Language</h2>
+  <div class="box solid">🌐 Choose your language</div>
+  <div class="box">English</div><div class="box" style="border-color:var(--brass);color:var(--brass)">हिन्दी</div>
+  <div class="box">मराठी · ગુજરાતી · தமிழ்</div><div class="box">తెలుగు · ಕನ್ನಡ · മലയാളം</div>
+  <div class="box">বাংলা · ਪੰਜਾਬੀ · ଓଡ଼ିଆ</div>
+  <div class="btn">Continue</div>
+  <p class="note">Changeable anytime in Settings</p>
+</div>
+
+<div class="frame"><h2>2 · Onboarding quiz</h2>
+  <div class="bar"><i style="width:40%"></i></div>
+  <div class="box solid">Q4/9 · What's your main goal?</div>
+  <div class="box">Better bladder control</div>
+  <div class="box" style="border-color:var(--brass);color:var(--brass)">Sexual wellness</div>
+  <div class="box">Postpartum recovery</div>
+  <div class="box">Prostate health · Overall strength</div>
+  <div class="btn">Next</div>
+  <p class="note">Pain/pregnancy/surgery answers branch to the safety track</p>
+</div>
+
+<div class="frame"><h2>3 · Plan reveal</h2>
+  <div class="box solid">Your personalized plan ✓</div>
+  <div class="box">Stage 1 · Beginner Foundation<br><span class="note">3 min/day · 3s holds</span></div>
+  <div class="box lock">Stage 2 · Basic Strength 🔒</div>
+  <div class="box lock">Stage 3–7 · … 🔒</div>
+  <div class="box">Est. first results: 4–6 weeks<br><span class="note">estimated, varies by person</span></div>
+  <div class="btn">Start first session</div>
+</div>
+
+<div class="frame"><h2>4 · Paywall</h2>
+  <div class="box solid" style="border-color:var(--brass)">⭐ Complete Course — ₹2,999 once<br><span class="note">BEST VALUE · everything, forever</span></div>
+  <div class="box">Monthly — ₹999/mo<br><span class="note">7-day free trial · cancel anytime</span></div>
+  <div class="box note">Unlocks: full program · voice coach · analytics · badges · all languages content</div>
+  <div class="btn">Start free trial</div>
+  <div class="ghost">Continue with free plan</div>
+  <p class="note">Pay by UPI / card / net-banking in the store sheet · Restore purchases</p>
+</div>
+
+<div class="frame"><h2>5 · Today (home)</h2>
+  <div class="row"><span>Namaste, Arjun</span><span class="chip on">🔥 6</span></div>
+  <div class="box solid" style="text-align:center;padding:16px">Today's session<br><b>Basic Strength · 5 min</b><br><br><span class="chip on">▶ Start</span></div>
+  <div class="row"><span class="chip">Weekly goal 4/5</span><span class="chip">Score 62 est.</span></div>
+  <div class="box note">"Consistency builds control — day 6 of week 2"</div>
+  <div class="tabs"><b>Today</b><span>Program</span><span>Progress</span><span>Learn</span><span>Profile</span></div>
+</div>
+
+<div class="frame"><h2>6 · Session player</h2>
+  <div class="row"><span class="note">✕</span><span class="note">Rep 4/10</span><span class="note">🔇</span></div>
+  <div class="box solid" style="text-align:center;border-color:var(--brass);color:var(--brass)">SQUEEZE</div>
+  <div class="circle">3</div>
+  <p class="note" style="text-align:center">Lift and hold — keep breathing</p>
+  <div class="bar"><i style="width:45%"></i></div>
+  <div class="ghost">Pause</div>
+  <p class="note">Circle grows on squeeze (rising tone, haptic), shrinks on release (falling tone). Fully usable by audio alone.</p>
+</div>
+
+<div class="frame"><h2>7 · Completion</h2>
+  <div class="circle" style="border-color:var(--green);color:var(--green)">✓</div>
+  <div class="row"><span class="chip on">+14 XP</span><span class="chip on">🔥 7 days</span><span class="chip">Score +1 est.</span></div>
+  <div class="box">How was it? &nbsp; 😌 Easy · 🙂 Right · 😮‍💨 Hard</div>
+  <div class="box note">🏅 New badge: One Week Strong</div>
+  <div class="btn">Done</div>
+  <p class="note">Difficulty rating feeds auto-adaptation</p>
+</div>
+
+<div class="frame"><h2>8 · Program map</h2>
+  <div class="box good">● 1 Beginner Foundation ✓</div>
+  <div class="box" style="border-color:var(--brass);color:var(--brass)">◉ 2 Basic Strength — week 2</div>
+  <div class="box lock">○ 3 Endurance 🔒</div>
+  <div class="box lock">○ 4 Speed · 5 Control · 6 Functional 🔒</div>
+  <div class="box lock">○ 7 Expert / Maintenance 🔒</div>
+  <div class="tabs"><span>Today</span><b>Program</b><span>Progress</span><span>Learn</span><span>Profile</span></div>
+</div>
+
+<div class="frame"><h2>9 · Progress</h2>
+  <div class="row"><span class="chip on">Week</span><span class="chip">Month</span><span class="chip">All</span></div>
+  <div class="box solid"><div class="cols"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:0%;opacity:.15"></i><i style="height:80%"></i><i style="height:65%"></i><i style="height:90%"></i></div><p class="note">Sessions this week</p></div>
+  <div class="box">Control Score trend ↗ 62 <span class="note">(estimated)</span></div>
+  <div class="row"><span class="chip">🔥 Best 12</span><span class="chip">Total 48</span><span class="chip">6h 20m</span></div>
+  <div class="box note">🏅 Achievements (9/25) →</div>
+  <div class="tabs"><span>Today</span><span>Program</span><b>Progress</b><span>Learn</span><span>Profile</span></div>
+</div>
+
+<div class="frame"><h2>10 · Learn</h2>
+  <div class="box solid">Find the right muscle<br><span class="note">schematic guide + "try one rep"</span></div>
+  <div class="box">What are Kegels? · Benefits (men) · Benefits (women)</div>
+  <div class="box">Common mistakes ⚠️ · Correct technique</div>
+  <div class="box lock">Deep dives · videos 🔒 premium</div>
+  <div class="box note">Reviewed by [physiotherapist name] · wellness info, not medical advice</div>
+  <div class="tabs"><span>Today</span><span>Program</span><span>Progress</span><b>Learn</b><span>Profile</span></div>
+</div>
+
+<div class="frame"><h2>11 · Settings</h2>
+  <div class="box">Account · Subscription (Lifetime ✓) · Restore</div>
+  <div class="box">Language: हिन्दी →</div>
+  <div class="box">Reminders: 7:30 AM · categories ⚙︎</div>
+  <div class="box">Sound ✓ · Voice ✓ · Vibration ✓</div>
+  <div class="box">App lock ✓ · Discreet icon ○</div>
+  <div class="box">Export my data · Delete account</div>
+  <div class="box note">Terms · Privacy · Disclaimer</div>
+  <div class="tabs"><span>Today</span><span>Program</span><span>Progress</span><span>Learn</span><b>Profile</b></div>
+</div>
+
+<div class="frame"><h2>12 · Safety branch</h2>
+  <div class="box solid" style="border-color:var(--brass)">Let's start gently</div>
+  <div class="box">You mentioned pelvic pain. Strengthening can wait — we'll begin with relaxation and breathing.</div>
+  <div class="box note">We recommend seeing a pelvic-floor physiotherapist. This app is a fitness tool, not medical care.</div>
+  <div class="btn">Start relaxation track</div>
+  <div class="ghost">Learn more</div>
+</div>
+
+</div>
+</body>
+</html>
