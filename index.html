@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kegel Trainer: Pelvic Floor Exercises | Kegel Coach</title>
+<meta name="description" content="Free kegel exercise trainer for men and women. Guided pelvic floor workouts, daily reminders, streaks and progress tracking. Simple, private, works offline.">
+<meta name="theme-color" content="#387ed1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app">
+
+  <!-- ============ HOME ============ -->
+  <main class="view" id="view-home">
+    <header class="appbar">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" class="brand-mark" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+        </svg>
+        <span>Kegel Coach</span>
+      </div>
+      <span class="appbar-date" id="home-date"></span>
+    </header>
+
+    <section class="hero">
+      <div class="ring-wrap">
+        <svg viewBox="0 0 120 120" class="ring">
+          <circle cx="60" cy="60" r="52" class="ring-track"/>
+          <circle cx="60" cy="60" r="52" class="ring-fill" id="ring-fill"/>
+        </svg>
+        <div class="ring-center">
+          <div class="ring-count" id="ring-count">0/3</div>
+          <div class="ring-label">sessions today</div>
+        </div>
+      </div>
+      <div class="hero-chips">
+        <div class="chip"><span class="chip-num" id="chip-streak">0</span><span class="chip-label">day streak</span></div>
+        <div class="chip"><span class="chip-num" id="chip-mins">0m</span><span class="chip-label">today</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Workouts</h2>
+      <div class="list" id="program-list"></div>
+    </section>
+
+    <section class="section">
+      <div class="list">
+        <button class="row row-link" data-nav="learn">
+          <div class="row-main">
+            <div class="row-title">How to do a kegel?</div>
+            <div class="row-sub">Find the right muscle &amp; technique</div>
+          </div>
+          <svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ STATS ============ -->
+  <main class="view" id="view-stats" hidden>
+    <header class="appbar"><div class="brand"><span>Progress</span></div></header>
+
+    <section class="section">
+      <div class="stat-grid">
+        <div class="stat-tile"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">Day streak</div></div>
+        <div class="stat-tile"><div class="stat-num" id="stat-best">0</div><div class="stat-label">Best streak</div></div>
+        <div class="stat-tile"><div class="stat-num" id="stat-sessions">0</div><div class="stat-label">Sessions</div></div>
+        <div class="stat-tile"><div class="stat-num" id="stat-time">0m</div><div class="stat-label">Total time</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Last 7 days</h2>
+      <div class="chart" id="chart-week"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Recent sessions</h2>
+      <div class="list" id="history-list"></div>
+      <p class="empty" id="history-empty">No sessions yet. Start your first workout!</p>
+    </section>
+  </main>
+
+  <!-- ============ LEARN ============ -->
+  <main class="view" id="view-learn" hidden>
+    <header class="appbar"><div class="brand"><span>Guide</span></div></header>
+
+    <section class="section prose">
+      <h2 class="section-title">Find the right muscle</h2>
+      <div class="card">
+        <p>Your pelvic floor muscles are the ones you'd use to <strong>stop urine mid-flow</strong> or hold in gas. Try it once while on the toilet to locate them — but don't make a habit of exercising while urinating.</p>
+        <p>When you squeeze, you should feel a gentle <em>lift</em> inside. Your belly, thighs and glutes should stay relaxed.</p>
+      </div>
+
+      <h2 class="section-title">Technique</h2>
+      <div class="card">
+        <ol>
+          <li>Sit, lie down, or stand comfortably. Breathe normally.</li>
+          <li><strong>Squeeze</strong> and lift the pelvic floor when the app says so.</li>
+          <li><strong>Release fully</strong> during rest — the relaxation is as important as the squeeze.</li>
+          <li>Don't hold your breath, clench your abs, or tighten your buttocks.</li>
+        </ol>
+      </div>
+
+      <h2 class="section-title">Tips</h2>
+      <div class="card">
+        <ul>
+          <li>Consistency beats intensity — 3 short sessions a day works best.</li>
+          <li>Attach it to a habit: after brushing teeth, during a commute, before bed.</li>
+          <li>Expect noticeable results in 4–6 weeks of daily practice.</li>
+          <li>Nobody can tell you're exercising — do it anywhere.</li>
+        </ul>
+      </div>
+
+      <div class="card card-note">
+        <p><strong>Note:</strong> This app is for general fitness. If you have pain, are pregnant, or recently had surgery, consult a doctor or pelvic health physiotherapist first.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ SETTINGS ============ -->
+  <main class="view" id="view-settings" hidden>
+    <header class="appbar"><div class="brand"><span>Settings</span></div></header>
+
+    <section class="section">
+      <h2 class="section-title">Goal</h2>
+      <div class="list">
+        <div class="row">
+          <div class="row-main">
+            <div class="row-title">Daily goal</div>
+            <div class="row-sub" id="goal-sub">3 sessions a day</div>
+          </div>
+          <div class="stepper">
+            <button class="step-btn" id="goal-minus" aria-label="Decrease goal">−</button>
+            <span class="step-val" id="goal-val">3</span>
+            <button class="step-btn" id="goal-plus" aria-label="Increase goal">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">During exercise</h2>
+      <div class="list">
+        <div class="row">
+          <div class="row-main"><div class="row-title">Sound cues</div><div class="row-sub">Beep on squeeze &amp; rest</div></div>
+          <label class="switch"><input type="checkbox" id="opt-sound"><span class="knob"></span></label>
+        </div>
+        <div class="row">
+          <div class="row-main"><div class="row-title">Vibration</div><div class="row-sub">Haptic cue on phase change</div></div>
+          <label class="switch"><input type="checkbox" id="opt-vibrate"><span class="knob"></span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Appearance</h2>
+      <div class="list">
+        <div class="row">
+          <div class="row-main"><div class="row-title">Theme</div></div>
+          <div class="seg" id="theme-seg">
+            <button data-theme="auto">Auto</button>
+            <button data-theme="light">Light</button>
+            <button data-theme="dark">Dark</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Data</h2>
+      <div class="list">
+        <button class="row row-link" id="btn-reset">
+          <div class="row-main"><div class="row-title danger">Reset all data</div><div class="row-sub">Deletes history and settings</div></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="section about">
+      <p>Kegel Coach · v1.0</p>
+      <p>Your data never leaves this device.</p>
+    </section>
+  </main>
+
+  <!-- ============ BOTTOM NAV ============ -->
+  <nav class="tabbar">
+    <button class="tab active" data-nav="home">
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="tab" data-nav="stats">
+      <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Progress</span>
+    </button>
+    <button class="tab" data-nav="learn">
+      <svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 012-2h6v18H6a2 2 0 01-2-2V5zM12 3h6a2 2 0 012 2v14a2 2 0 01-2 2h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Guide</span>
+    </button>
+    <button class="tab" data-nav="settings">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1 1.55V21a2 2 0 11-4 0v-.09a1.7 1.7 0 00-1-1.55 1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.7 1.7 0 00.34-1.87 1.7 1.7 0 00-1.55-1H3a2 2 0 110-4h.09a1.7 1.7 0 001.55-1 1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06a1.7 1.7 0 001.87.34h.09a1.7 1.7 0 001-1.55V3a2 2 0 114 0v.09a1.7 1.7 0 001 1.55h.09a1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06a1.7 1.7 0 00-.34 1.87v.09a1.7 1.7 0 001.55 1H21a2 2 0 110 4h-.09a1.7 1.7 0 00-1.55 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ============ SESSION OVERLAY ============ -->
+<div id="session" hidden>
+  <header class="session-top">
+    <button class="icon-btn" id="session-close" aria-label="End session">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <span id="session-name"></span>
+    <span class="session-rep" id="session-rep"></span>
+  </header>
+
+  <div class="session-body">
+    <div class="pulse-wrap">
+      <div class="pulse" id="pulse"></div>
+      <div class="pulse-core" id="pulse-core">
+        <div class="phase" id="phase-label">GET READY</div>
+        <div class="count" id="phase-count">3</div>
+      </div>
+    </div>
+    <p class="phase-hint" id="phase-hint">Relax and breathe</p>
+  </div>
+
+  <div class="session-progress"><div class="session-progress-fill" id="session-bar"></div></div>
+
+  <div class="session-actions">
+    <button class="btn btn-ghost" id="btn-pause">Pause</button>
+  </div>
+</div>
+
+<!-- ============ DONE OVERLAY ============ -->
+<div id="done" hidden>
+  <div class="done-inner">
+    <svg viewBox="0 0 24 24" class="done-check"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2>Session complete</h2>
+    <p id="done-sub"></p>
+    <p class="done-streak" id="done-streak"></p>
+    <button class="btn btn-primary" id="btn-done">Done</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
